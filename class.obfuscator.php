@@ -31,12 +31,18 @@ class SmartObfuscator
          
         $substrFuncName = "_" . self::randomString(4, 9);
          
-        $substrFunc = "function " . $substrFuncName . "(" . $randomVarThree . "){" . $randomVarThree . "=substr(" . $randomVarThree . ",(int)(hex2bin('" . bin2hex($frontLen) . "')));" . $randomVarThree . "=substr(" . $randomVarThree . ",(int)(hex2bin('" . bin2hex(0) . "')),(int)(hex2bin('" . bin2hex(-1 * $backLen) . "')));return " . $randomVarThree . ";}";
-        $decodeFunc = $randomVarTwo . "='" . $substrFuncName . "';" . $base64Decode . "='base64_decode';function " . $decodeFuncName . "(" . $randomVarOne . "){global " . $randomVarTwo . ";global " . $base64Decode . ";return strrev(gzinflate(" . $base64Decode . "(" . $substrFuncName . "(" . $randomVarOne . "))));}"; 
+        $substrFunc = "function " . $substrFuncName . "(" . $randomVarThree . "){" . $randomVarThree
+                    . "=substr(" . $randomVarThree . ",(int)(hex2bin('" . bin2hex($frontLen) . "')));"
+                    . $randomVarThree . "=substr(" . $randomVarThree . ",(int)(hex2bin('" . bin2hex(0) . "')),(int)(hex2bin('"
+                    . bin2hex(-1 * $backLen) . "')));return " . $randomVarThree . ";}";
+                    
+        $decodeFunc = $randomVarTwo . "='" . $substrFuncName . "';" . $base64Decode . "='base64_decode';function "
+                    . $decodeFuncName . "(" . $randomVarOne . "){global " . $randomVarTwo . ";global " . $base64Decode
+                    . ";return strrev(gzinflate(" . $base64Decode . "(" . $substrFuncName . "(" . $randomVarOne . "))));}"; 
          
-        $midObfCode = $substrFunc . "" . $decodeFunc . "" . $obfCode;
+        $midObfCode = $substrFunc . $decodeFunc . $obfCode;
         $fullyObfCode = "<?php\neval(base64_decode('" . base64_encode($midObfCode) . "'));\n?>";
-         
+        
         return $fullyObfCode;
     }
      
