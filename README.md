@@ -23,10 +23,10 @@ when you use smart-php-obfuscator. Try it yourself!
 
 ## Popular Deobfuscator Tests
 
-- UnPHP.net - **Failed to Deobfuscate**
-- JonhBurn2.FreeHostia.com - **Failed to Deobfuscate**
-- FailBoat.org (Project VoidWalker) - **Failed to Deobfuscate**
-- DDecode.com (PHP Decoder) - **Failed to Deobfuscate**
+- UnPHP.net - **Failed to Deobfuscate** - As of July 20, 2016
+- JonhBurn2.FreeHostia.com - **Failed to Deobfuscate** - As of July 20, 2016
+- FailBoat.org (Project VoidWalker) - **Failed to Deobfuscate** - As of July 20, 2016
+- DDecode.com (PHP Decoder) - **Failed to Deobfuscate** - As of July 20, 2016
 
 ## Requirements
 
